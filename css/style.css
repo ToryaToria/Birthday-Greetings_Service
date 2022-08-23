@@ -1,0 +1,237 @@
+@font-face {
+  font-family: "Bad Script";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/bad-script-v16-latin_cyrillic-regular.woff2") format("woff2");
+  src: url("../fonts/bad-script-v16-latin_cyrillic-regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/open-sans-v29-latin_cyrillic-regular.woff2") format("woff2");
+  src: url("../fonts/open-sans-v29-latin_cyrillic-regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/open-sans-v29-latin_cyrillic-700.woff2") format("woff2");
+  src: url("../fonts/open-sans-v29-latin_cyrillic-700.woff") format("woff");
+  font-display: swap;
+}
+
+
+/*______________________________________________*/
+
+body {
+	height: 100vh;
+	padding-bottom: 17px;
+
+	box-sizing: border-box;
+
+	font-family: "Open Sans";
+	background: #fff1f8;
+	
+	display: flex;
+	flex-direction: column;
+}
+
+* {
+	box-sizing: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 90px;
+}
+
+/*_____________________ header _________________________*/
+
+.header {
+	position: relative;
+	z-index: 1;
+	padding: 28px 0;
+	background-color: #ffffff;
+	box-shadow: 0px 1px 20px rgba(72, 3, 38, 0.07);
+}
+
+.header__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__button-change {
+	width: 300px;
+	height: 65px;
+
+	font-weight: 700;
+	font-size: 18px;
+	color: #ffffff;
+
+	background-color: #C300C7;
+	border-radius: 30px;
+	border: none;
+}
+
+.header__button-change:not(:last-child) {
+margin-right: 30px;
+}
+
+.header_button-gender {
+	width: 60px;
+	height: 60px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 24px 4px rgba(0, 0, 0, 0.04);
+	background-color: #ffffff;
+	background-repeat: no-repeat ;
+	background-position: center;
+	background-size: 36px;
+}
+
+.header_button-gender:not(:last-child) {
+	margin-right: 20px;
+}
+
+.header_button-gender_m {
+	border: 1px solid #1178B3;
+	background-image: url(../img/men.svg);
+}
+
+.header_button-gender_w {
+border: 1px solid #C300C7;
+background-image: url(../img/women.svg);
+}
+
+/*_____________________ main _________________________*/
+
+.card {
+	display: flex;
+	flex-grow: 1;
+
+	padding: 32px 0;
+}
+
+.card__container {
+display: flex;
+}
+
+.card__wrapper {
+	position: relative;
+	margin: auto;
+	display: flex;
+	box-shadow: 0px 0px 50px rgba(96, 4, 50, 0.23);
+	font-size: 3px;
+}
+
+.card__text {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	font-family: "Bad Script";
+	line-height: 1.8;
+	font-size: max(3em, min(calc(100vw * 3 / 140), 6em));
+	color: #000000;
+
+}
+
+/*_____________________ footer _________________________*/
+
+.footer__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer__text {
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+
+color: #000000;
+}
+
+.footer__text-copy {
+	font-size: 14px;
+line-height: 19px;
+}
+
+.footer_btn {
+width: 36px;
+height: 36px;
+background-repeat: no-repeat;
+background-position: center;
+background-size: 36px;
+}
+
+.footer__wrapper-social {
+	display: flex;
+}
+
+.footer_btn:not(:last-child) {
+margin-right: 16px;
+}
+
+.footer_btn-vk {
+background-image: url(../img/vk.svg);
+}
+
+.footer_btn-tg {
+	background-image: url(../img/tg.svg);
+	}
+
+.footer_btn-pnt {
+	background-image: url(../img/pnt.svg);
+	}
+
+.footer_btn-stum {
+	background-image: url(../img/stum.svg);
+	}
+/*_____________________ media _________________________*/
+
+
+@media (max-width:960px)  {
+	.container {
+		padding: 0 10px;
+	}
+
+.header__button-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+.header__button-change {
+width: 220px;
+height: 45px;
+font-size: 14px;
+margin-right: 0;
+}
+
+.header_button-gender {
+	width: 40px;
+height: 40px;
+background-size: 30px;
+margin-right: 0;
+}
+}
+
