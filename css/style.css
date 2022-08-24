@@ -30,15 +30,20 @@
 
 body {
 	height: 100vh;
-	padding-bottom: 17px;
-
 	box-sizing: border-box;
 
 	font-family: "Open Sans";
-	background: #fff1f8;
 	
 	display: flex;
 	flex-direction: column;
+}
+
+.women {
+	background-color: #FFF1F8;
+}
+
+.men {
+	background-color: #EFF9FE;
 }
 
 * {
@@ -52,6 +57,16 @@ button {
 img {
 	max-width: 100%;
 	height: auto;
+}
+
+p {
+	margin: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 .container {
@@ -74,6 +89,12 @@ img {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 30px;
+}
+
+.header__button-wrapper_text {
+	display: flex;
+	gap: 30px;
 }
 
 .header__button-change {
@@ -84,18 +105,28 @@ img {
 	font-size: 18px;
 	color: #ffffff;
 
-	background-color: #C300C7;
+	background-color: #B8FF20;
 	border-radius: 30px;
 	border: none;
 }
 
-.header__button-change:not(:last-child) {
-margin-right: 30px;
+.men .header__button-change {
+	background-color: #1178B3;
+}
+
+.women .header__button-change {
+	background-color: #C300C7;
+}
+
+.header__button-wrapper_gend {
+	display: flex;
+	gap: 20px;
 }
 
 .header_button-gender {
 	width: 60px;
 	height: 60px;
+	border: 1px solid transparent;
 	border-radius: 10px;
 	box-shadow: 0px 0px 24px 4px rgba(0, 0, 0, 0.04);
 	background-color: #ffffff;
@@ -104,18 +135,20 @@ margin-right: 30px;
 	background-size: 36px;
 }
 
-.header_button-gender:not(:last-child) {
-	margin-right: 20px;
-}
-
-.header_button-gender_m {
-	border: 1px solid #1178B3;
+.header_button-gender_men {
 	background-image: url(../img/men.svg);
 }
 
-.header_button-gender_w {
-border: 1px solid #C300C7;
+.men .header_button-gender_men {
+	border: 1px solid #1178B3;
+}
+
+.header_button-gender_women {
 background-image: url(../img/women.svg);
+}
+
+.women .header_button-gender_women {
+	border: 1px solid #C300C7;
 }
 
 /*_____________________ main _________________________*/
@@ -145,19 +178,35 @@ display: flex;
 	top: 50%;
 	transform: translate(-50%, -50%);
 
-	font-family: "Bad Script";
 	line-height: 1.8;
 	font-size: max(3em, min(calc(100vw * 3 / 140), 6em));
 	color: #000000;
+}
 
+.women .card__text {
+	font-family: "Bad Script";
+}
+
+.men .card__text {
+	font-family: "Open Sans";
+	font-weight: 700;
 }
 
 /*_____________________ footer _________________________*/
+.footer {
+	padding-bottom: 17px;
+}
 
 .footer__container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.footer__contacts {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 }
 
 .footer__text {
@@ -175,37 +224,22 @@ color: #000000;
 line-height: 19px;
 }
 
-.footer_btn {
-width: 36px;
-height: 36px;
-background-repeat: no-repeat;
-background-position: center;
-background-size: 36px;
-}
-
-.footer__wrapper-social {
+.footer__social {
 	display: flex;
+	gap: 16px;
 }
 
-.footer_btn:not(:last-child) {
-margin-right: 16px;
+.footer_svg {
+	color: #B8FF20;
 }
 
-.footer_btn-vk {
-background-image: url(../img/vk.svg);
+.women .footer_svg {
+	color:#C300C7;
 }
 
-.footer_btn-tg {
-	background-image: url(../img/tg.svg);
-	}
-
-.footer_btn-pnt {
-	background-image: url(../img/pnt.svg);
-	}
-
-.footer_btn-stum {
-	background-image: url(../img/stum.svg);
-	}
+.men .footer_svg {
+	color:#1178B3;
+}
 /*_____________________ media _________________________*/
 
 
@@ -214,24 +248,46 @@ background-image: url(../img/vk.svg);
 		padding: 0 10px;
 	}
 
-.header__button-wrapper {
+.header__button-wrapper{
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px;
 }
 
+.header__button-wrapper_gend {
+	justify-content: center;
+
+}
 .header__button-change {
 width: 220px;
 height: 45px;
 font-size: 14px;
-margin-right: 0;
 }
 
 .header_button-gender {
 	width: 40px;
 height: 40px;
 background-size: 30px;
-margin-right: 0;
 }
 }
 
+@media (max-width:480px)  {
+.footer__container {
+flex-direction: column;
+gap: 30px;
+}
+
+.footer__contacts {
+order: 1;
+}
+}
+
+@media (max-width:400px)  {
+.header__container {
+	flex-direction: column;
+}
+
+.header__button-wrapper {
+	justify-content: center;
+}
+}
